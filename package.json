@@ -21,8 +21,18 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@ng-select/ng-select": "^0.30.1",
+    "angular-inport": "^1.0.3",
+    "angular4-carousel": "^3.1.8",
+    "animate.css": "^3.6.1",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
+    "intersection-observer": "^0.5.0",
+    "ng-in-viewport": "^1.2.0",
+    "ngx-in-view": "^0.2.1",
+    "ngx-slick": "^0.1.3",
     "rxjs": "^5.5.6",
+    "ui-carousel": "^0.2.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

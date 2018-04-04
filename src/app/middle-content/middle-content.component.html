@@ -1,0 +1,134 @@
+<div class="middle-content">
+  <div class="container">
+    <div class="middle-content__info">
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <p>
+            What are the requirements to web pages and sites that are designed and laid out in a network?
+            First, we must adhere to web standards. Our web pages have to be made by all the rules that have been
+            developed and adopted as mandatory to use.
+            <span><a href="javascript:">Request a quote</a></span>
+          </p>
+          <p>
+            We understand the importance of innovation and
+            professionalism and work with the best people to achieve this.
+          </p>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="middle-content__info__wrapper">
+            <div class="row">
+              <div class="col-12 col-sm-3">
+                <div class="middle-content__info__wrapper__image">
+                  <img src="../../assets/chrome.png">
+                </div>
+              </div>
+              <div class="col-12 col-sm-9">
+                <div class="middle-content__info__wrapper__text">
+                  <h4>Flexibility and Cross-platform</h4>
+                  <p>Web pages should appear the same on all devices. It creates a kind of universality.</p>
+                  <a href="javascript:">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-12 col-sm-3">
+                <div class="middle-content__info__wrapper__image">
+                  <img src="../../assets/firefox.png">
+                </div>
+              </div>
+              <div class="col-12 col-sm-9">
+                <div class="middle-content__info__wrapper__text">
+                  <h4>User-friendly content</h4>
+                  <p>We have to take care of the content that will be placed on the pages .
+                    It must be structured to have a certain type ( single design ), and be user-friendly.
+                  </p>
+                  <a href="javascript:">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="middle-content__introduction">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4">
+          <img src="../../assets/it1.jpg">
+          <h3>Agricultural Processing</h3>
+          <span>Objectively innovate empowered</span>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <img src="../../assets/it2.jpg">
+          <h3>Machinery & Tools</h3>
+          <span>Objectively innovate empowered</span>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <img src="../../assets/it3.jpg">
+          <h3>Coal & Solid Fuels</h3>
+          <span>Objectively innovate empowered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="middle-content__filter">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="middle-content__filter__header">
+          <div class="row">
+            <div class="col-4">
+              <h1>Image filter</h1>
+              <span>:::::::::::::::::::::::::::::::::::::::::::::::</span>
+            </div>
+            <div class="col-8">
+              <ul class="list-inline">
+                <li [ngClass]="{'active': color === ''}">
+                  <a href="javascript:" (click)="color = ''">Display all</a>
+                </li>
+                <li [ngClass]="{'active': color === 'red'}">
+                  <a href="javascript:" (click)="color = 'red'">Red</a>
+                </li>
+                <li [ngClass]="{'active': color === 'blue'}">
+                  <a href="javascript:" (click)="color = 'blue'">Blue</a>
+                </li>
+                <li [ngClass]="{'active': color === 'cold'}">
+                  <a href="javascript:" (click)="color = 'cold'">Cold</a>
+                </li>
+                <li [ngClass]="{'active': color === 'hot'}">
+                  <a href="javascript:" (click)="color = 'hot'">Hot</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="middle-content__filter__image-wrapper">
+          <ul class="row list-inline">
+            <li class="col-12 col-md-3 animated fadeIn" *ngFor="let image of images | imageFilter: color">
+              <img src={{image.imageSrc}}/>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="middle-content__advertising" #carouselRoot>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <div class="middle-content__advertising__head">
+            <h3>Companies carousel</h3>
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+            <div ngxSlickItem *ngFor="let slide of brands" class="slide">
+              <img src="{{ slide.src }}" alt="" width="80%" style="padding: 15px">
+            </div>
+          </ngx-slick>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

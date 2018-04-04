@@ -1,18 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { MainHeadComponent } from './main-head/main-head.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MainComponent } from './main/main.component';
+import {LanguageService} from "./services/language.service";
+import { MainBodyComponent } from './main-body/main-body.component';
+import {UICarouselModule} from "ui-carousel";
+import { InViewportModule } from 'ng-in-viewport';
+import 'intersection-observer';
+import { MiddleContentComponent } from './middle-content/middle-content.component';
+import { ImageFilterPipe } from './pipes/image-filter.pipe';
+import { SlickModule } from 'ngx-slick';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    MainHeadComponent,
+    MainComponent,
+    MainBodyComponent,
+    MiddleContentComponent,
+    ImageFilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectModule,
+    UICarouselModule,
+    InViewportModule.forRoot(),
+    SlickModule.forRoot()
   ],
-  providers: [],
+  providers: [LanguageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

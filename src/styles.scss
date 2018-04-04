@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  margin: 0;
+}
+
+.btn-success {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.row {
+  width: 100%;
+  margin: 0;
+}
+.ng-select.custom .ng-dropdown-panel {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000;
+  float: left;
+  min-width: 160px;
+  margin: 2px 0 0;
+  font-size: 14px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  div b {
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    padding: 8px 10px;
+    font-size: 13px;
+    display: block;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    white-space: nowrap;
+    color: #9d9d9d;
+  }
+}
+.ng-select.custom .ng-input{
+  input {
+    cursor: pointer!important;
+  }
+}
+
+.slick-arrow {
+  display: none;
+}

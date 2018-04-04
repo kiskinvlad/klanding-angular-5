@@ -1,0 +1,114 @@
+.main-head {
+  margin-top: 15px;
+  .main-head__brand {
+    color: #9d9d9d;
+    font-size: 14px;
+  }
+  .main-head__li {
+    display: inline-block;
+    color: #9d9d9d;
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  .main-head__li {}
+  .custom {
+    display: inline-block;
+  }
+  /deep/ .ng-select.custom .ng-control  {
+    color: #9d9d9d;
+    font-size: 14px;
+  }
+  /deep/ .ng-select.custom .ng-dropdown-panel {
+    top: 25px;
+    left: 0;
+  }
+  /deep/ .ng-option.marked {
+    background: #f7c51d;
+    transition: all 1s;
+  }
+  /deep/ .ng-option {
+    transition: all 1s;
+  }
+  .header__select__wrapper__arrow {
+    i {
+      position: absolute;
+      right: 5px;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+  .main-head__info_wrapper {
+    margin-top: 60px;
+    .main-head__brand_wrapper {
+      .main-head__brand_wrapper__icon_wrapper {
+        display: block;
+        float: left;
+      }
+      .main-head__brand_wrapper__text_wrapper {
+        float: left;
+        padding: 0 10px;
+        h3 {
+          font-size: 24px;
+          line-height: 20px;
+          margin: 0;
+        }
+        span {
+          font-size: 14px;
+          color: #9d9d9d;
+          line-height: 18px;
+        }
+      }
+      .main-head__brand_icon {
+        margin-top: -24px;
+        background: url("../../assets/k-ico.png");
+        width: 70px;
+        height: 70px;
+        background-size: cover;
+      }
+    }
+    .main-head__col_wrapper {
+      margin-top: 10px;
+      h4 {
+        font-weight: 400;
+        font-size: 18px;
+        margin: 0;
+      }
+      span {
+        font-size: 14px;
+        color: #9d9d9d;
+      }
+    }
+    .main-head__button_wrapper {
+      button {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        height: 52px;
+        width: 100%;
+        background-color: #f7c51d;
+        transition-property: background;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #000;
+        transition-property: background;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+      }
+    }
+  }
+}
+
+/*** Media queries. Mobile adaptive ***/
+@media only screen and (max-width: 768px) {
+  .main-head__col_wrapper,
+  .main-head__button_wrapper,
+  .main-head__brand_wrapper__text_wrapper {
+    margin: 15px auto;
+  }
+}

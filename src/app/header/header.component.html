@@ -1,0 +1,64 @@
+<header class="header" [ngClass]="{'d-none': isHeaderHidden}">
+  <!--Desktop header -->
+  <div class="d-none d-sm-block">
+    <div class="row">
+      <div class="header__left col-sm">
+        <h4 class="header__left__made"> ⚇ Made by Kiskin </h4>
+      </div>
+      <div  class="header__right col-sm">
+        <div class="header__right__contact float-right">
+          <button class="btn btn-success">Contact</button>
+          <a class="header__close" (click)="hideHeader()" href="javascript:">
+            <i class="material-icons">cancel</i>
+            <span>Close</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Mobile header -->
+  <div class="mobile d-sm-none">
+    <div class="row">
+      <div class="col">
+        <div class="header__select__wrapper">
+          <ng-select #LanguageSelect class="custom"
+                     [items]="languages"
+                     bindLabel="name"
+                     bindValue="id"
+                     [searchable]="false"
+                     [clearable]="false"
+                     (open)="openLanguageSelect()"
+                     (close)="closeLanguageSelect()"
+                     [(ngModel)]="selectedLanguage">
+            <ng-template ng-label-tmp let-item="item">
+              <b>{{item.short}}</b>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <b>{{item.name}}</b>
+            </ng-template>
+          </ng-select>
+          <span class="header__select__wrapper__arrow"
+                (click)="toggleDropdown()"
+                [ngClass]="{'arrow-up': isDropDownOpen, 'arrow-down': !isDropDownOpen}">
+            <i class="material-icons">arrow_drop_down</i>
+          </span>
+        </div>
+      </div>
+      <div class="col">
+        <div  class="header__right">
+          <div class="float-right">
+            <a class="header__email" href>
+              <i class="material-icons">email</i>
+            </a>
+            <a  class="header__close" (click)="hideHeader()" href="javascript:">
+              <i class="material-icons">cancel</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>

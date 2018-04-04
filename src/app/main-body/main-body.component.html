@@ -1,0 +1,205 @@
+<div class="main-body">
+  <div class="main-body__carousel" #carouselRoot>
+    <div class="main-body__navbar_wrapper">
+      <div class="main-body__navbar">
+        <div class="container d-none d-lg-block">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="col-1 navbar__right_border">
+              <div class="navbar__left">
+                <i class="material-icons">home</i>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-10" id="navbarNav">
+              <div class="collapse navbar-collapse ">
+                <div class="col-10">
+                  <div class="navbar__middle">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="javascript:">Home
+                          <div class="navbar__middle__tab-footer"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">Solution
+                          <div class="navbar__middle__tab-footer"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">Projects
+                          <div class="navbar__middle__tab-footer"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">Blog
+                          <div class="navbar__middle__tab-footer"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">Services
+                          <div class="navbar__middle__tab-footer"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">Shop
+                          <div class="navbar__middle__tab-footer"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">About
+                          <div class="navbar__middle__tab-footer"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">Contact
+                          <div class="navbar__middle__tab-footer"></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="navbar__middle_right">
+                    <ul class="navbar-nav float-right">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="javascript:">
+                          <i class="material-icons">airplanemode_active</i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">
+                          <i class="material-icons">visibility</i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">
+                          <i class="material-icons">warning</i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:">
+                          <i class="material-icons">work</i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1 navbar__left_border">
+              <div class="navbar__right">
+                <a href="javascript:" (click)="toggleSearchInput()">
+                  <i class="material-icons">search</i>
+                </a>
+                <div class="navbar__right__input_wrapper animated"
+                     [ngClass]="{
+                        'bounceInRight':searchBounce === true,
+                        'bounceOutLeft':searchBounce === false,
+                        'search-hidden':searchBounce === null
+                      }">
+                  <input type="text" placeholder="Enter your search term"/>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="mobile d-lg-none">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="mobile__navbar__head row">
+              <div class="col-2">
+                <i class="material-icons">home</i>
+              </div>
+              <div class="col-8">
+                <input type="text" placeholder="Type your search term">
+              </div>
+              <div class="col-2">
+                <button class="navbar-toggler float-right"
+                        type="button"
+                        (click)="toggleNavigation()"
+                        aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                  <i class="material-icons">dehaze</i>
+                </span>
+                </button>
+              </div>
+            </div>
+            <div [ngClass]="{'collapse': !isMobileNavHidden}" class="navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <ul>
+                  <li>
+                    <div>
+                      <a class="nav-link" href="javascript:">Home</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a class="nav-link" href="javascript:">Solution</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a class="nav-link" href="javascript:">Projects</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a class="nav-link" href="javascript:">Blog</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a class="nav-link" href="javascript:">Services</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a class="nav-link" href="javascript:">Shop</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a class="nav-link" href="javascript:">About</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a class="nav-link" href="javascript:">Contact</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <ui-carousel [infinite]="true"
+                 [fade]="false"
+                 [speed]="400"
+                 [autoPlay]="true"
+                 [dots]="false"
+                 [autoPlaySpeed]='5000'
+                 height="500px" width="100%">
+      <ui-carousel-item *ngFor="let item of images; let i = index">
+        <div class="main-body__carousel__item"
+             in-viewport
+             [inViewportOptions]="{ rootElement: carouselRoot, partial: false }"
+             (inViewportAction)="toggleAnimation($event, i)"
+             [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(' + item.link + ')'}">
+          <div class="container">
+            <div class="main-body__carousel__item__text">
+              <div class="col-8 offset-3">
+                <h3 *ngIf="item.mainText" class="animated">{{item.mainText.text}}</h3>
+                <h2 class="animated">{{item.secondText.text}}</h2>
+                <p class="animated">{{item.thirdText.text}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ui-carousel-item>
+    </ui-carousel>
+  </div>
+</div>
