@@ -30,7 +30,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 ## Running in production
 
-Run `npm run prod` to build app and then serve by express.
+Run `npm run prod` to build app and then serve by express. Then navigate to [localhost:3000](http://localhost:300)
 
 ## Further help
 
