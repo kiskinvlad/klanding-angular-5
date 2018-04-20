@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://klanding-angular5.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
 };
