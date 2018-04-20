@@ -35,3 +35,5 @@ Run `npm run prod` to build app and then serve by express. Then navigate to [loc
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Dist folder size ~1.3mb
