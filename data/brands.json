@@ -1,0 +1,52 @@
+[
+  {
+    "id": 0,
+    "name": "intel",
+    "src": "../../assets/intel-logo.png"
+  },
+  {
+    "id": 1,
+    "name": "amd",
+    "src": "../../assets/amd-logo.png"
+  },
+  {
+    "id": 2,
+    "name": "radeon",
+    "src": "../../assets/nvidia-logo.png"
+  },
+  {
+    "id": 3,
+    "name": "nvidia",
+    "src": "../../assets/radeon-logo.png"
+  },
+  {
+    "id": 4,
+    "name": "seagate",
+    "src": "../../assets/k-ico.png"
+  },
+  {
+    "id": 5,
+    "name": "intel",
+    "src": "../../assets/intel-logo.png"
+  },
+  {
+    "id": 6,
+    "name": "amd",
+    "src": "../../assets/amd-logo.png"
+  },
+  {
+    "id": 7,
+    "name": "radeon",
+    "src": "../../assets/nvidia-logo.png"
+  },
+  {
+    "id": 8,
+    "name": "nvidia",
+    "src": "../../assets/radeon-logo.png"
+  },
+  {
+    "id": 9,
+    "name": "seagate",
+    "src": "../../assets/k-ico.png"
+  }
+]

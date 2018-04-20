@@ -1,8 +1,8 @@
 <div class="main-body">
   <div class="main-body__carousel" #carouselRoot>
     <div class="main-body__navbar_wrapper">
-      <div class="main-body__navbar">
-        <div class="container d-none d-lg-block">
+      <div class="main-body__navbar" [ngClass]="{'fixed animated fadeIn': !navIsOnTop}">
+        <div class="container d-none d-md-block">
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="col-1 navbar__right_border">
               <div class="navbar__left">
@@ -105,7 +105,7 @@
             </div>
           </nav>
         </div>
-        <div class="mobile d-lg-none">
+        <div class="mobile d-xs-block d-md-none">
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="mobile__navbar__head row">
               <div class="col-2">
@@ -175,31 +175,32 @@
         </div>
       </div>
     </div>
-
-    <ui-carousel [infinite]="true"
-                 [fade]="false"
-                 [speed]="400"
-                 [autoPlay]="true"
-                 [dots]="false"
-                 [autoPlaySpeed]='5000'
-                 height="500px" width="100%">
-      <ui-carousel-item *ngFor="let item of images; let i = index">
-        <div class="main-body__carousel__item"
-             in-viewport
-             [inViewportOptions]="{ rootElement: carouselRoot, partial: false }"
-             (inViewportAction)="toggleAnimation($event, i)"
-             [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(' + item.link + ')'}">
-          <div class="container">
-            <div class="main-body__carousel__item__text">
-              <div class="col-8 offset-3">
-                <h3 *ngIf="item.mainText" class="animated">{{item.mainText.text}}</h3>
-                <h2 class="animated">{{item.secondText.text}}</h2>
-                <p class="animated">{{item.thirdText.text}}</p>
+    <div in-viewport (inViewportAction)="inViewHandler($event)" *ngIf="images[0]">
+      <ui-carousel [infinite]="true"
+                   [fade]="false"
+                   [speed]="400"
+                   [autoPlay]="true"
+                   [dots]="false"
+                   [autoPlaySpeed]='5000'
+                   height="500px" width="100%">
+        <ui-carousel-item *ngFor="let item of images; let i = index">
+          <div class="main-body__carousel__item"
+               in-viewport
+               [inViewportOptions]="{ rootElement: carouselRoot, partial: false }"
+               (inViewportAction)="toggleAnimation($event, i)"
+               [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(' + item.link + ')'}">
+            <div class="container">
+              <div class="main-body__carousel__item__text">
+                <div class="col-8 offset-3">
+                  <h3 *ngIf="item.mainText" class="animated">{{item.mainText.text}}</h3>
+                  <h2 class="animated">{{item.secondText.text}}</h2>
+                  <p class="animated">{{item.thirdText.text}}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </ui-carousel-item>
-    </ui-carousel>
+        </ui-carousel-item>
+      </ui-carousel>
+    </div>
   </div>
 </div>

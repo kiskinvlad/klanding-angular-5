@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from "../services/api.service";
+import {Color} from "../models/color";
+import {Brand} from "../models/brand";
+import {Qbox} from "../models/qbox";
+import {Accordion} from "../models/accordion";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-middle-content',
@@ -6,53 +12,88 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./middle-content.component.scss']
 })
 export class MiddleContentComponent implements OnInit {
-  images: Array<any>;
-  brands: Array<any>;
-  color: String;
+  colors: Color[] = [];
+  brands: Brand[] = [];
+  qBoxes: Qbox[] = [];
+  accordionInfo: Accordion[] = [];
+  activeColor: String;
+  infoInView: boolean;
+  filterInView: boolean;
+  advertisingInView: boolean;
+  quoteInView: boolean;
+  newsLeftInView: boolean;
+  newsRightInView: boolean;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.images = [
-      {id: 0, name: 'Red', conditions: ['red', 'hot'], imageSrc: "../../assets/red-background.jpg", animation: 'fadeIn'},
-      {id: 1, name: 'Blue', conditions: ['blue', 'cold'], imageSrc: "../../assets/blue-background.jpg", animation: 'fadeIn'},
-      {id: 3, name: 'Beach', conditions: ['hot'], imageSrc: "../../assets/beach-background.jpg", animation: 'fadeIn'},
-      {id: 4, name: 'Cold', conditions: ['cold'], imageSrc: "../../assets/cold-background.jpg", animation: 'fadeIn'}
-    ];
-    this.brands = [
-      {id: 0, name: 'intel', src: '../../assets/intel-logo.png'},
-      {id: 1, name: 'amd', src: '../../assets/amd-logo.png'},
-      {id: 2, name: 'radeon', src: '../../assets/nvidia-logo.png'},
-      {id: 3, name: 'nvidia', src: '../../assets/radeon-logo.png'},
-      {id: 4, name: 'seagate', src: '../../assets/k-ico.png'},
-      {id: 5, name: 'intel', src: '../../assets/intel-logo.png'},
-      {id: 6, name: 'amd', src: '../../assets/amd-logo.png'},
-      {id: 7, name: 'radeon', src: '../../assets/nvidia-logo.png'},
-      {id: 8, name: 'nvidia', src: '../../assets/radeon-logo.png'},
-      {id: 9, name: 'seagate', src: '../../assets/k-ico.png'}
-    ]
+    this.getColors();
+    this.getBrands();
+    this.getQbox();
+    this.getAccordion();
 
-    this.color = '';
+    this.activeColor = '';
+    this.infoInView = false;
+    this.filterInView = false;
+    this.advertisingInView = false;
+    this.quoteInView = false;
+    this.newsLeftInView = false;
+    this.newsRightInView = false;
   }
 
-  slides = [
-    {img: "http://placehold.it/350x150/000000"},
-    {img: "http://placehold.it/350x150/111111"},
-    {img: "http://placehold.it/350x150/333333"},
-    {img: "http://placehold.it/350x150/666666"}
-  ];
   slideConfig = {"slidesToShow": 5, "slidesToScroll": 1,  "autoplay": true};
+  quoteSlideConfig = {"slidesToShow": 3, "slidesToScroll": 1,  "autoplay": true};
 
-  addSlide() {
-    this.slides.push({img: "http://placehold.it/350x150/777777"})
+  private getColors(): Subscription {
+    return this.apiService.getColors().subscribe((color) => {
+      this.colors = color as Color[];
+    });
   }
 
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
+  private getBrands(): Subscription {
+    return this.apiService.getBrands().subscribe((brand) => {
+      this.brands = brand as Brand[];
+    });
   }
 
-  afterChange(e) {
-    console.log('afterChange');
+  private getQbox(): Subscription {
+    return this.apiService.getQboxes().subscribe((box) => {
+      this.qBoxes = box as Qbox[];
+    });
+  }
+
+  private getAccordion(): Subscription {
+    return this.apiService.getAccordion().subscribe((accordion) => {
+      this.accordionInfo = accordion as Accordion[];
+    });
+  }
+
+  public getQboxRate(length): Array<number> {
+    return Array(length).fill(0).map((x,i)=>i)
+  }
+
+  public infoInViewHandler(event): void {
+    this.infoInView = event.value;
+  }
+
+  public filterInViewHandler(event): void {
+    this.filterInView = event.value;
+  }
+
+  public advertisingInViewHandler(event): void {
+    this.advertisingInView = event.value;
+  }
+
+  public quoteInViewHandler(event): void {
+    this.quoteInView = event.value;
+  }
+
+  public newsLeftInViewHandler(event): void {
+    this.newsLeftInView = event.value;
+  }
+
+  public newsRightInViewHandler(event): void {
+    this.newsRightInView = event.value;
   }
 
 }

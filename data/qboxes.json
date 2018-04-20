@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "header": "Angular 5",
+    "text": "Create scalable front-end applications with angular 2+",
+    "author": "Kiskin Vladyslav",
+    "post": "Front-end developer",
+    "rating": 5
+  },
+  {
+    "id": 1,
+    "header": "NodeJs",
+    "text": "Building neural networks, chat bots, web servers with Express or really anything you can thing of",
+    "author": "Kiskin Vladyslav",
+    "post": "Back-end developer",
+    "rating": 4
+  },
+  {
+    "id": 2,
+    "header": "Bootstrap 4",
+    "text": "Build response, mobile-first sites and UI with HTML5 and CSS3",
+    "author": "Kiskin Vladyslav",
+    "post": "Web developer",
+    "rating": 3
+  },
+  {
+    "id": 3,
+    "header": "Python",
+    "text": "Create desktop applications with Kivy or PyQt and servers with Django",
+    "author": "Kiskin Vladyslav",
+    "post": "Software engineer",
+    "rating": 2
+  }
+]

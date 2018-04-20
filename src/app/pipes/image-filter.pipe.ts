@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ImageFilterPipe implements PipeTransform {
 
-  transform(items: any[], color: String): any[] {
+  public transform(items: any[], color: String): any[] {
     if (!items) return [];
     if(color) {
       let result = [];
@@ -22,5 +22,4 @@ export class ImageFilterPipe implements PipeTransform {
       return items;
     }
   }
-
 }

@@ -1,0 +1,13 @@
+<div class="panel panel-info" (click)="toggle.emit()">
+  <div class="panel-heading">
+    <h3>{{title}}</h3>
+    <span [ngStyle]="{'color':'#f7c51d'}" [hidden]="!opened">-</span>
+    <span [hidden]="opened">+</span>
+  </div>
+  <div class="panel-body" [ngClass]="{'active' : opened}">
+    <hr/>
+    <div class="panel-body__content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

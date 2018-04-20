@@ -2,7 +2,7 @@
   <div class="container">
     <div class="middle-content__info">
       <div class="row">
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-md-6">
           <p>
             What are the requirements to web pages and sites that are designed and laid out in a network?
             First, we must adhere to web standards. Our web pages have to be made by all the rules that have been
@@ -14,15 +14,15 @@
             professionalism and work with the best people to achieve this.
           </p>
         </div>
-        <div class="col-12 col-sm-6">
-          <div class="middle-content__info__wrapper">
+        <div class="col-12 col-md-6">
+          <div class="middle-content__info__wrapper animated">
             <div class="row">
-              <div class="col-12 col-sm-3">
+              <div class="col-12 order-2 order-md-first col-md-3">
                 <div class="middle-content__info__wrapper__image">
                   <img src="../../assets/chrome.png">
                 </div>
               </div>
-              <div class="col-12 col-sm-9">
+              <div class="col-12 order-first order-md-2 col-md-9">
                 <div class="middle-content__info__wrapper__text">
                   <h4>Flexibility and Cross-platform</h4>
                   <p>Web pages should appear the same on all devices. It creates a kind of universality.</p>
@@ -33,12 +33,12 @@
           </div>
           <div>
             <div class="row">
-              <div class="col-12 col-sm-3">
+              <div class="col-12 order-2 order-md-first col-md-3">
                 <div class="middle-content__info__wrapper__image">
                   <img src="../../assets/firefox.png">
                 </div>
               </div>
-              <div class="col-12 col-sm-9">
+              <div class="col-12 order-first order-md-2 col-md-9">
                 <div class="middle-content__info__wrapper__text">
                   <h4>User-friendly content</h4>
                   <p>We have to take care of the content that will be placed on the pages .
@@ -53,28 +53,38 @@
       </div>
     </div>
     <div class="middle-content__introduction">
-      <div class="row">
+      <div class="row animated"
+           [ngClass]="{'fadeInLeft': infoInView, 'fadeOutRight': !infoInView}"
+           in-viewport (inViewportAction)="infoInViewHandler($event)">
         <div class="col-12 col-sm-6 col-md-4">
-          <img src="../../assets/it1.jpg">
-          <h3>Agricultural Processing</h3>
-          <span>Objectively innovate empowered</span>
+          <div class="middle-content__introduction__item"
+               style="background: url('../../assets/it1.jpg'); background-position: center; background-size: cover">
+          </div>
+          <h3>Code</h3>
+          <span>Write once run anywhere</span>
         </div>
         <div class="col-12 col-sm-6 col-md-4">
-          <img src="../../assets/it2.jpg">
-          <h3>Machinery & Tools</h3>
-          <span>Objectively innovate empowered</span>
+          <div class="middle-content__introduction__item"
+               style="background: url('../../assets/it2.jpg'); background-position: center; background-size: cover">
+          </div>
+          <h3>Tools</h3>
+          <span>Biggest community</span>
         </div>
         <div class="col-12 col-sm-6 col-md-4">
-          <img src="../../assets/it3.jpg">
-          <h3>Coal & Solid Fuels</h3>
-          <span>Objectively innovate empowered</span>
+          <div class="middle-content__introduction__item"
+               style="background: url('../../assets/it3.jpg'); background-position: center; background-size: cover">
+          </div>
+          <h3>Frameworks</h3>
+          <span>Supporting structure around which something can be built</span>
         </div>
       </div>
-    </div>
+  </div>
   </div>
   <div class="middle-content__filter">
     <div class="container-fluid">
-      <div class="container">
+      <div class="container animated"
+           [ngClass]="{'fadeInRight': filterInView, 'fadeOutLeft': !filterInView}"
+           in-viewport (inViewportAction)="filterInViewHandler($event)">
         <div class="middle-content__filter__header">
           <div class="row">
             <div class="col-4">
@@ -83,20 +93,20 @@
             </div>
             <div class="col-8">
               <ul class="list-inline">
-                <li [ngClass]="{'active': color === ''}">
-                  <a href="javascript:" (click)="color = ''">Display all</a>
+                <li [ngClass]="{'active': activeColor === ''}">
+                  <a href="javascript:" (click)="activeColor = ''">Display all</a>
                 </li>
-                <li [ngClass]="{'active': color === 'red'}">
-                  <a href="javascript:" (click)="color = 'red'">Red</a>
+                <li [ngClass]="{'active': activeColor === 'red'}">
+                  <a href="javascript:" (click)="activeColor = 'red'">Red</a>
                 </li>
-                <li [ngClass]="{'active': color === 'blue'}">
-                  <a href="javascript:" (click)="color = 'blue'">Blue</a>
+                <li [ngClass]="{'active': activeColor === 'blue'}">
+                  <a href="javascript:" (click)="activeColor = 'blue'">Blue</a>
                 </li>
-                <li [ngClass]="{'active': color === 'cold'}">
-                  <a href="javascript:" (click)="color = 'cold'">Cold</a>
+                <li [ngClass]="{'active': activeColor === 'cold'}">
+                  <a href="javascript:" (click)="activeColor = 'cold'">Cold</a>
                 </li>
-                <li [ngClass]="{'active': color === 'hot'}">
-                  <a href="javascript:" (click)="color = 'hot'">Hot</a>
+                <li [ngClass]="{'active': activeColor === 'hot'}">
+                  <a href="javascript:" (click)="activeColor = 'hot'">Hot</a>
                 </li>
               </ul>
             </div>
@@ -104,28 +114,111 @@
         </div>
         <div class="middle-content__filter__image-wrapper">
           <ul class="row list-inline">
-            <li class="col-12 col-md-3 animated fadeIn" *ngFor="let image of images | imageFilter: color">
-              <img src={{image.imageSrc}}/>
+            <li class="col-12 col-md-3" *ngFor="let col of colors | imageFilter: activeColor">
+              <div [ngStyle]="{'background': 'url(' + col.imageSrc + ')', 'background-size':'cover'}"></div>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="middle-content__advertising" #carouselRoot>
+  <div class="middle-content__advertising animated"
+       [ngClass]="{'fadeIn': advertisingInView, 'fadeOut': !advertisingInView}"
+       in-viewport (inViewportAction)="advertisingInViewHandler($event)"
+       #carouselRoot>
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-3">
+        <div class="d-none d-md-block col-md-3">
           <div class="middle-content__advertising__head">
             <h3>Companies carousel</h3>
           </div>
         </div>
         <div class="col-12 col-md-9">
-          <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+          <ngx-slick class="carousel companies__carousel" #slickModal="slick-modal" [config]="slideConfig">
             <div ngxSlickItem *ngFor="let slide of brands" class="slide">
-              <img src="{{ slide.src }}" alt="" width="80%" style="padding: 15px">
+              <img src="{{ slide.src }}" alt="" width="80%">
             </div>
           </ngx-slick>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="middle-content__quote animated"
+       [ngClass]="{'fadeIn': quoteInView, 'fadeOut': !quoteInView}"
+       in-viewport (inViewportAction)="quoteInViewHandler($event)">
+    <div class="container">
+      <div>
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="quoteSlideConfig">
+          <div ngxSlickItem *ngFor="let slide of qBoxes" class="slide">
+            <div class="middle-content__quote__box">
+              <span>
+                <i class="material-icons">reply</i>
+              </span>
+              <h3>{{slide.header}}</h3>
+              <p>{{slide.text}}</p>
+              <div class="middle-content__quote__box__outer">
+                <h3>Kiskin Vladislav
+                  <span>Technician Engineer</span>
+                </h3>
+                <ul class="list-inline">
+                <li *ngFor="let rating of getQboxRate(slide.rating)" class="list-inline-item">
+                  <i class="material-icons">star</i>
+                </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </ngx-slick>
+      </div>
+    </div>
+  </div>
+  <div class="middle-content__news">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 animated"
+             [ngClass]="{'fadeInLeft': newsLeftInView, 'fadeOutLeft': !newsLeftInView}"
+             in-viewport (inViewportAction)="newsLeftInViewHandler($event)">
+          <h1>Simple accordion panels</h1>
+          <span>::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span>
+          <div *ngIf="accordionInfo[0]">
+            <app-accordion>
+              <app-panel *ngFor="let panel of accordionInfo" title="{{panel.header}}">{{panel.text}}</app-panel>
+            </app-accordion>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 animated"
+             [ngClass]="{'fadeInRight': newsRightInView, 'fadeOutRight': !newsRightInView}"
+             in-viewport (inViewportAction)="newsRightInViewHandler($event)">
+          <h1>Latest news</h1>
+          <span>::::::::::::::::::::::::::::::</span>
+          <div class="middle-content__news__block">
+            <div class="middle-content__news__block__image_wrapper">
+              <img src="../../assets/news1.jpg">
+            </div>
+            <div class="middle-content__news__block__text_wrapper">
+              <a href="javascript:">
+                First News Block Header
+              </a>
+              <span>March 29, 2018 /</span>
+              <span>Publisher General</span>
+              <p>This is text for the first news block.</p>
+              <a>Read More</a>
+            </div>
+          </div>
+          <div class="middle-content__news__block">
+            <div class="middle-content__news__block__image_wrapper">
+              <img src="../../assets/news2.jpg">
+            </div>
+            <div class="middle-content__news__block__text_wrapper">
+              <a href="javascript:">
+                Second News Block Header
+              </a>
+              <span>April 14, 2018 /</span>
+              <span>Publisher General</span>
+              <p>This is text for the first news block.</p>
+              <a>Read More</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

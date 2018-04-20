@@ -24,15 +24,15 @@ export class MainHeadComponent implements OnInit {
 
   }
 
-  openLanguageSelect(): void {
+  public openLanguageSelect(): void {
     this.isDropDownOpen = true;
   }
 
-  closeLanguageSelect(): void {
+  public closeLanguageSelect(): void {
     this.isDropDownOpen = false;
   }
 
-  toggleDropdown(): void {
+  public toggleDropdown(): void {
     this.LanguageSelect.open();
   }
 

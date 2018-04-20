@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "name": "Red",
+    "conditions": ["red", "hot"],
+    "imageSrc": "../../assets/red-background.jpg",
+    "animation": "fadeIn"
+  },
+  {
+    "id": 1,
+    "name": "Blue",
+    "conditions": ["blue", "cold"],
+    "imageSrc": "../../assets/blue-background.jpg",
+    "animation": "fadeIn"
+  },
+  {
+    "id": 3,
+    "name": "Beach",
+    "conditions": ["hot"],
+    "imageSrc": "../../assets/beach-background.jpg",
+    "animation": "fadeIn"
+  },
+  {
+    "id": 4,
+    "name": "Cold",
+    "conditions": ["cold"],
+    "imageSrc": "../../assets/cold-background.jpg",
+    "animation": "fadeIn"
+  }
+]

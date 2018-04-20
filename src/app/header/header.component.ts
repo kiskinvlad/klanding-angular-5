@@ -24,20 +24,19 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  openLanguageSelect(): void {
+  public openLanguageSelect(): void {
     this.isDropDownOpen = true;
   }
 
-  closeLanguageSelect(): void {
+  public closeLanguageSelect(): void {
     this.isDropDownOpen = false;
   }
 
-  toggleDropdown(): void {
+  public toggleDropdown(): void {
     this.LanguageSelect.open();
   }
 
-  hideHeader(): void {
-    console.log('ss')
+  public hideHeader(): void {
     this.isHeaderHidden = true;
   }
 }

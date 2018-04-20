@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "header": "NodeJS",
+    "text": "Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+  },
+  {
+    "id":1 ,
+    "header": "Django",
+    "text": "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design."
+  },
+  {
+    "id": 2,
+    "header": "Ruby On rails",
+    "text": "Rails is a web application development framework written in the Ruby language."
+  }
+]

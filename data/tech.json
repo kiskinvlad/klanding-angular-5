@@ -1,0 +1,46 @@
+[
+  {
+    "id": 0,
+    "link": "../../assets/IT-1.jpg",
+    "mainText": {
+      "text": "Web development",
+      "animation": "bounceInLeft"
+    },
+    "secondText": {
+      "text": "MEAN stack",
+      "animation": "bounceInRight"
+    },
+    "thirdText": {
+      "text": "This is AngularJs (Angular 2+) plus MongoDB plus Express plus NodeJs plus fun!",
+      "animation": "bounceInUp"
+    }
+  },
+  {
+    "id": 1,
+    "link": "../../assets/IT-2.jpg",
+    "mainText": {
+      "text": "Desktop development",
+      "animation": "bounceInLeft"
+    },
+    "secondText": {
+      "text": "Create apps with Python",
+      "animation": "bounceInDown"
+    },
+    "thirdText": {
+      "text": "Like Qt? - Try PyQt. Don't like Qt? - Use Kivy.",
+      "animation": "bounceInUp"
+    }
+  },
+  {
+    "id": 2,
+    "link": "../../assets/IT-3.jpg",
+    "secondText": {
+      "text": "Created by Kiskin Vlad",
+      "animation": "bounceInDown"
+    },
+    "thirdText": {
+      "text": "Using Angular 5, Express and Bootstrap 4",
+      "animation": "bounceInUp"
+    }
+  }
+]

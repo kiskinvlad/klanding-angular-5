@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs/Observable";
 import {Language} from "../models/language";
 
 @Injectable()
@@ -17,7 +16,7 @@ export class LanguageService {
     this.Russian
   ];
 
-  getLanguages(): Array<Language> {
+  public getLanguages(): Array<Language> {
     return this.lanuagesArray;
   }
 

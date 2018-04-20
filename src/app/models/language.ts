@@ -11,7 +11,7 @@ export class Language implements Deserializable<Language>{
     this.short = short;
   }
 
-  deserialize(input: any): Language {
+  public deserialize(input: any): Language {
     Object.assign(this, input);
     return this;
   }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgSelectModule } from '@ng-select/ng-select';
-
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,7 +16,11 @@ import 'intersection-observer';
 import { MiddleContentComponent } from './middle-content/middle-content.component';
 import { ImageFilterPipe } from './pipes/image-filter.pipe';
 import { SlickModule } from 'ngx-slick';
-
+import { PanelComponent } from './panel/panel.component';
+import { AccordionComponent } from './accordion/accordion.component';
+import { FooterComponent } from './footer/footer.component';
+import { ApiService } from './services/api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { SlickModule } from 'ngx-slick';
     MainComponent,
     MainBodyComponent,
     MiddleContentComponent,
-    ImageFilterPipe
+    ImageFilterPipe,
+    PanelComponent,
+    AccordionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +42,10 @@ import { SlickModule } from 'ngx-slick';
     NgSelectModule,
     UICarouselModule,
     InViewportModule.forRoot(),
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    HttpClientModule,
   ],
-  providers: [LanguageService],
+  providers: [LanguageService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
