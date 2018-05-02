@@ -61,7 +61,7 @@
     "no-empty-interface": true,
     "no-eval": true,
     "no-inferrable-types": [
-      true,
+      false,
       "ignore-params"
     ],
     "no-misused-new": true,
@@ -128,6 +128,12 @@
       "element",
       "app",
       "kebab-case"
+    ],
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "member-variable-declaration"
     ],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,

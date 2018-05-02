@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
-import {Language} from "../models/language";
+import {Language} from '../models/language';
 
+/**
+ * Language service
+ * @class LanguageService
+ */
 @Injectable()
 export class LanguageService {
-  constructor() {
 
-  }
-  English = new Language(0, 'English', 'ENG');
-  Russian = new Language(1, 'Russian', 'RUS');
-  Ukrainian = new Language(2, 'Ukrainian', 'UA');
+  /**
+   * @constructor
+   */
+  constructor() { }
+  English: Language = new Language(0, 'English', 'ENG');
+  Russian: Language = new Language(1, 'Russian', 'RUS');
+  Ukrainian: Language = new Language(2, 'Ukrainian', 'UA');
 
   lanuagesArray: Array<Language> = [
     this.English,
@@ -16,6 +22,10 @@ export class LanguageService {
     this.Russian
   ];
 
+  /**
+   * Push languages to language array
+   * @returns Array<Language>
+   */
   public getLanguages(): Array<Language> {
     return this.lanuagesArray;
   }

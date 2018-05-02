@@ -6,11 +6,11 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainHeadComponent } from './main-head/main-head.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MainComponent } from './main/main.component';
-import {LanguageService} from "./services/language.service";
+import {LanguageService} from './services/language.service';
 import { MainBodyComponent } from './main-body/main-body.component';
-import {UICarouselModule} from "ui-carousel";
+import {UICarouselModule} from 'ui-carousel';
 import { InViewportModule } from 'ng-in-viewport';
 import 'intersection-observer';
 import { MiddleContentComponent } from './middle-content/middle-content.component';
@@ -22,6 +22,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 
+/***
+ * Boostrapper module
+ */
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,4 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [LanguageService, ApiService],
   bootstrap: [AppComponent]
 })
+/**
+ * Application main model
+ * @class AppModule
+ */
 export class AppModule { }
