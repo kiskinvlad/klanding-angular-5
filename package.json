@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run prod",
-    "prod": "ng build --prod && NODE_ENV=production node ./bin/www",
+    "prod": "ng build --prod && compodoc -p tsconfig.json && NODE_ENV=production node ./bin/www",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -58,6 +58,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^6.0.107",
     "codelyzer": "^4.0.1",
+    "hoek": "^5.0.3",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
